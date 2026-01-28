@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e090b5a0-7f68-4609-b5c7-764aa96a1e64" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="ci-cd-apiFlow" doc:id="7fc82cbd-1597-465c-a70f-2f0975ecbabf" >
+		<http:listener doc:name="Listener" doc:id="a79c66da-9fc7-4f4a-936a-af5be319b649" config-ref="HTTP_Listener_config" path="/cicd"/>
+		<set-payload value='#[{&#10;	"name":"ram",&#10;	"sucess":"true"&#10;}]' doc:name="Set Payload" doc:id="7ac31e1f-155e-4d95-ac5d-724995755f8e" />
+		<ee:transform doc:name="Transform Message" doc:id="bd4ed782-6df2-459e-b58d-5d7b99452941" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="f8e1b965-c442-497c-ac93-adbfa4b4ebd8" message="#[payload]" />
+	</flow>
+</mule>
