@@ -1,0 +1,72 @@
+{
+  "basicConstraints": 57,
+  "criticalExtensionOIDs": [
+    "Nunc",
+    "Nam"
+  ],
+  "extendedKeyUsage": [
+    "arcu",
+    "tempor"
+  ],
+  "extensions": [
+    {
+      "criticality": true,
+      "oid": "nibh"
+    }
+  ],
+  "issuerAlternativeNames": [
+    {
+      "name": "Clement",
+      "type": 29
+    }
+  ],
+  "issuerDN": {
+    "commonName": "ut",
+    "name": "Anastacia"
+  },
+  "issuerUniqueID": [
+    false,
+    false
+  ],
+  "issuerX500Principal": {
+    "name": "Alona"
+  },
+  "keyUsage": [
+    true,
+    true,
+    true
+  ],
+  "name": "Dan",
+  "nonCriticalExtensionOIDs": [
+    "molestie",
+    "elit",
+    "erat"
+  ],
+  "publicKey": {
+    "algorithm": "ipsum",
+    "modulus": 0,
+    "params": 12,
+    "publicKey": "Nam"
+  },
+  "serialNumber": 80,
+  "serialNumberObject": {
+    "serialNumber": 42
+  },
+  "sigAlgName": "venenatis",
+  "sigAlgOID": "a",
+  "subjectAlternativeNames": [
+    {
+      "name": "Alva",
+      "type": 21
+    }
+  ],
+  "subjectDN": {
+    "commonName": "justo",
+    "name": "Alise"
+  },
+  "subjectX500Principal": {
+    "name": "Clair"
+  },
+  "type": "Aliquam",
+  "version": 81
+}

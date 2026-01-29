@@ -1,73 +1,71 @@
 {
-  "basicConstraints": 87,
+  "basicConstraints": 43,
   "criticalExtensionOIDs": [
-    "ac",
-    "nunc",
-    "eget"
+    "lectus",
+    "sodales",
+    "vitae"
   ],
   "extendedKeyUsage": [
-    "erat",
-    "nisi",
-    "at"
+    "vitae",
+    "convallis"
   ],
   "extensions": [
     {
-      "criticality": false,
-      "oid": "dictum"
+      "criticality": true,
+      "oid": "elit"
     }
   ],
   "issuerAlternativeNames": [
     {
-      "name": "Chauncey",
-      "type": 59
+      "name": "Albertine",
+      "type": 23
     }
   ],
   "issuerDN": {
-    "commonName": "Lorem",
-    "name": "Alva"
+    "commonName": "a",
+    "name": "Adam"
   },
   "issuerUniqueID": [
-    true,
-    true,
+    false,
     true
   ],
   "issuerX500Principal": {
-    "name": "Alfredia"
+    "name": "Allen"
   },
   "keyUsage": [
     true,
     false
   ],
-  "name": "Alice",
+  "name": "Alfredo",
   "nonCriticalExtensionOIDs": [
-    "viverra",
-    "lorem"
+    "erat",
+    "ipsum"
   ],
   "publicKey": {
-    "algorithm": "eros",
-    "modulus": 1,
-    "params": 43,
-    "publicKey": "pulvinar"
+    "algorithm": "dictum",
+    "modulus": 75,
+    "params": 20,
+    "publicKey": "pretium"
   },
-  "serialNumber": 26,
+  "serialNumber": 7,
   "serialNumberObject": {
-    "serialNumber": 70
+    "serialNumber": 98
   },
-  "sigAlgName": "nibh",
-  "sigAlgOID": "dui",
+  "sigAlgName": "amet",
+  "sigAlgOID": "vitae",
   "subjectAlternativeNames": [
     {
-      "name": "Alfonzo",
-      "type": 1
+      "name": "Amelia",
+      "type": 74
     }
   ],
   "subjectDN": {
-    "commonName": "mi",
-    "name": "Carson"
+    "commonName": "ipsum",
+    "name": "Althea"
   },
   "subjectX500Principal": {
-    "name": "Craig"
+    "name": "Allyn"
   },
-  "type": "erat",
-  "version": 87
+  "type": "sit",
+  "version": 24
 }
