@@ -32,7 +32,7 @@ jobs:
 
       - name: Deploy to CloudHub 2.0
         run: |
-            mvn clean deploy -DmuleDeploy \
+            mvn deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
             -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
             -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}" \
             -DskipTests
