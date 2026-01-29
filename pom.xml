@@ -41,7 +41,7 @@
 						<muleVersion>${app.runtime}</muleVersion>
 						<server>Repository</server>
 						<applicationName>ci-cd-api</applicationName>
-						<releaseChannel>NONE</releaseChannel>
+						<releaseChannel>EDGE</releaseChannel>
 
 						<replicas>1</replicas>
 						<vCores>0.1</vCores>
