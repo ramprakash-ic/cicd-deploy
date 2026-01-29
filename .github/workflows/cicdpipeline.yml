@@ -24,11 +24,7 @@ jobs:
           distribution: "zulu"
           java-version: 17
 
-      - name: Publish to Exchange
-        run: |
-          mvn deploy --settings .maven/settings.xml -DskipMunitTests \
-          -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
-          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}"
+     
 
       - name: Deploy to CloudHub 2.0
         run: |
