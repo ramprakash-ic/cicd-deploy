@@ -1,0 +1,73 @@
+{
+  "basicConstraints": 87,
+  "criticalExtensionOIDs": [
+    "ac",
+    "nunc",
+    "eget"
+  ],
+  "extendedKeyUsage": [
+    "erat",
+    "nisi",
+    "at"
+  ],
+  "extensions": [
+    {
+      "criticality": false,
+      "oid": "dictum"
+    }
+  ],
+  "issuerAlternativeNames": [
+    {
+      "name": "Chauncey",
+      "type": 59
+    }
+  ],
+  "issuerDN": {
+    "commonName": "Lorem",
+    "name": "Alva"
+  },
+  "issuerUniqueID": [
+    true,
+    true,
+    true
+  ],
+  "issuerX500Principal": {
+    "name": "Alfredia"
+  },
+  "keyUsage": [
+    true,
+    false
+  ],
+  "name": "Alice",
+  "nonCriticalExtensionOIDs": [
+    "viverra",
+    "lorem"
+  ],
+  "publicKey": {
+    "algorithm": "eros",
+    "modulus": 1,
+    "params": 43,
+    "publicKey": "pulvinar"
+  },
+  "serialNumber": 26,
+  "serialNumberObject": {
+    "serialNumber": 70
+  },
+  "sigAlgName": "nibh",
+  "sigAlgOID": "dui",
+  "subjectAlternativeNames": [
+    {
+      "name": "Alfonzo",
+      "type": 1
+    }
+  ],
+  "subjectDN": {
+    "commonName": "mi",
+    "name": "Carson"
+  },
+  "subjectX500Principal": {
+    "name": "Craig"
+  },
+  "type": "erat",
+  "version": 87
+}
