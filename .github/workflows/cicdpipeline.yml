@@ -28,7 +28,7 @@ jobs:
         run: |
           mvn deploy --settings .maven/settings.xml -DskipMunitTests \
           -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
-          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}
+          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}"
 
      
 
