@@ -10,7 +10,10 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="ci-cd-apiFlow" doc:id="7fc82cbd-1597-465c-a70f-2f0975ecbabf" >
 		<http:listener doc:name="Listener" doc:id="a79c66da-9fc7-4f4a-936a-af5be319b649" config-ref="HTTP_Listener_config" path="/cicd"/>
-		<set-payload value='#[{&#10;	"name":"Ram",&#10;	"sucess":"True"&#10;}]' doc:name="Set Payload" doc:id="7ac31e1f-155e-4d95-ac5d-724995755f8e" />
+		<set-payload value='#[{
+	"name":"Ram",
+	"sucess":"true"
+}]' doc:name="Set Payload" doc:id="7ac31e1f-155e-4d95-ac5d-724995755f8e" />
 		<ee:transform doc:name="Transform Message" doc:id="bd4ed782-6df2-459e-b58d-5d7b99452941" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
