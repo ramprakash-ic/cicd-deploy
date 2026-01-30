@@ -24,15 +24,20 @@ jobs:
           distribution: "zulu"
           java-version: 17
 
-      - name: Deploy to CloudHub 2.0
+      - name: Step 1 - Publish to Exchange
+        # Only uploads the JAR to Exchange
         run: |
-          mvn clean deploy \
-            --settings .maven/settings.xml \
-            -DskipMunitTests \
-            -DmuleDeploy \
-            -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
-            -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}" \
-            -Dtarget=Cloudhub-US-East-2 \
-            -U
+          mvn clean deploy -s .maven/settings.xml \
+          -DskipMunitTests \
+          -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
+          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}"
+
+      - name: Step 2 - Deploy to CloudHub 2.0
+        # Tells CloudHub to grab the JAR we just uploaded
+        run: |
+          mvn mule:deploy -s .maven/settings.xml \
+          -DskipMunitTests \
+          -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
+          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}" 
 
      
