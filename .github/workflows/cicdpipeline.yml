@@ -26,9 +26,10 @@ jobs:
 
       
 
-      - name: Deploy to CloudHub 2.0
+      - name: Publish and Deploy
         run: |
-            mvn deploy --settings .maven/settings.xml -DskipMunitTests -DmuleDeploy \
-            -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
-            -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}" \
-            -DskipTests
+          mvn clean deploy -s .maven/settings.xml \
+          -DskipMunitTests \
+          -DmuleDeploy \
+          -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
+          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}"
