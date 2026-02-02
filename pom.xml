@@ -39,7 +39,6 @@
 						<environment>Sandbox</environment>
 						<target>Cloudhub-US-East-2</target>
 						<muleVersion>${app.runtime}</muleVersion>
-						<server>Repository</server>
 						<applicationName>ci-cd-api</applicationName>
 						<releaseChannel>EDGE</releaseChannel>
 
