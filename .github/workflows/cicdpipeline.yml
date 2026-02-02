@@ -1,5 +1,4 @@
-name: Publish to Exchange & Deploy to CH2.0
-
+name: Deploy to CH2.0
 on:
   push:
     branches: [ main ]
@@ -10,30 +9,33 @@ jobs:
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v4
-
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-maven-
-
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: "zulu"
           java-version: 17
-
-      - name: Step 1 - Publish to Exchange
-        # Only uploads the JAR to Exchange
+      - name: Build
         run: |
-          mvn clean deploy -s .maven/settings.xml \
-          -DskipMunitTests \
-          -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
-          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}"
+          mvn clean package -DskipMunitTests
 
-      - name: Step 2 - Deploy to CloudHub 2.0
-        # Tells CloudHub to grab the JAR we just uploaded
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: 17
+      - name: Deploy to CloudHub 2.0
         run: |
           mvn mule:deploy -s .maven/settings.xml \
           -DskipMunitTests \
