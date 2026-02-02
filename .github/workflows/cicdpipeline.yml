@@ -1,4 +1,4 @@
-name: Deploy to CH2.0
+name: Publish to Exchange & Deploy to CH2.0
 on:
   push:
     branches: [ main ]
@@ -20,9 +20,12 @@ jobs:
         with:
           distribution: "zulu"
           java-version: 17
-      - name: Build
+      - name: BE
         run: |
-          mvn clean package -DskipMunitTests
+          mvn clean deploy -s .maven/settings.xml \
+          -DskipMunitTests \
+          -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
+          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}"
 
   deploy:
     needs: build
@@ -40,6 +43,6 @@ jobs:
           mvn mule:deploy -s .maven/settings.xml \
           -DskipMunitTests \
           -Dclient.id="${{ secrets.CA_CLIENT_ID }}" \
-          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}" 
+          -Dclient.secret="${{ secrets.CA_CLIENT_SECRET }}"
 
      
